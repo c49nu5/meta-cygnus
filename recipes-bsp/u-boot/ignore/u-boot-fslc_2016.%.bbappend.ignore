@@ -2,10 +2,8 @@
 # Patch the u-boot kconfig file
 # Add our own u-boot Board files.
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
-
 SRC_URI += " \
-	file://mx6sxsabresd_cyg.h \
+	file://mx6sxsabresd_cyg.h;subdir=git/arch/${ARCH}/boot/dts \
 	file://mx6sxsabresd_cyg_defconfig \
 	file://0001-arch-arm-cpu-armv7-mx6-Kconfig.patch \
 	file://mx6sxsabresd_cyg/imximage.cfg \
@@ -14,6 +12,10 @@ SRC_URI += " \
 	file://mx6sxsabresd_cyg/Makefile \
 	file://mx6sxsabresd_cyg/mx6sxsabresd_cyg.c \
 	"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 do_compile_prepend() {
 
 	# Original 'u-boot-fscl' bb directory = meta-fsl-arm/recipes-bsp/u-boot
@@ -24,22 +26,22 @@ do_compile_prepend() {
 
 	# Copy H file to /include/configs:
 	#
-	cp ${WORKDIR}/mx6sxsabresd_cyg.h ${B}/include/configs
+	#cp ${WORKDIR}/mx6sxsabresd_cyg.h ${B}/include/configs
 
 	# Copy defconfig to /configs:
 	#
-	cp ${WORKDIR}/mx6sxsabresd_cyg_defconfig ${B}/configs
+	#cp ${WORKDIR}/mx6sxsabresd_cyg_defconfig ${B}/configs
 
 	# Create new Board directory:
 	#
-	mkdir -p ${B}/board/freescale/mx6sxsabresd_cyg
+	#mkdir -p ${B}/board/freescale/mx6sxsabresd_cyg
 
 	# Copy in board files:
 	#
-	cp ${WORKDIR}/mx6sxsabresd_cyg/imximage.cfg ${B}/board/freescale/mx6sxsabresd_cyg
-	cp ${WORKDIR}/mx6sxsabresd_cyg/Kconfig ${B}/board/freescale/mx6sxsabresd_cyg
-	cp ${WORKDIR}/mx6sxsabresd_cyg/MAINTAINERS ${B}/board/freescale/mx6sxsabresd_cyg
-	cp ${WORKDIR}/mx6sxsabresd_cyg/Makefile ${B}/board/freescale/mx6sxsabresd_cyg
-	cp ${WORKDIR}/mx6sxsabresd_cyg/mx6sxsabresd_cyg.c ${B}/board/freescale/mx6sxsabresd_cyg
+	#cp ${WORKDIR}/mx6sxsabresd_cyg/imximage.cfg ${B}/board/freescale/mx6sxsabresd_cyg
+	#cp ${WORKDIR}/mx6sxsabresd_cyg/Kconfig ${B}/board/freescale/mx6sxsabresd_cyg
+	#cp ${WORKDIR}/mx6sxsabresd_cyg/MAINTAINERS ${B}/board/freescale/mx6sxsabresd_cyg
+	#cp ${WORKDIR}/mx6sxsabresd_cyg/Makefile ${B}/board/freescale/mx6sxsabresd_cyg
+	#cp ${WORKDIR}/mx6sxsabresd_cyg/mx6sxsabresd_cyg.c ${B}/board/freescale/mx6sxsabresd_cyg
 }
 

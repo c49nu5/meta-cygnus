@@ -1,0 +1,2 @@
+recipetool appendsrcfile -wm imx6sxsabresd_cyg ../sources/meta-cygnus u-boot-fslc ../sources/meta-cygnus/recipes-bsp/u-boot/files/mx6sxsabresd_cyg.h 'board/freescale/mx6sxsabresd_cyg.h'
+
