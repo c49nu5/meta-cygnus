@@ -1,0 +1,18 @@
+# We have a conf and classes directory, add to BBPATH
+BBPATH .= ":${LAYERDIR}"
+
+# We have a packages directory, add to BBFILES
+BBFILES += "${LAYERDIR}/recipes*/*/*.bb \
+            ${LAYERDIR}/recipes*/*/*.bbappend"
+
+BBFILE_COLLECTIONS += "meta-cygnus"
+BBFILE_PATTERN_meta-cygnus := "^${LAYERDIR}/"
+BBFILE_PRIORITY_meta-cygnus = "10"
+
+# We need the fsl-arm layer
+LAYERDEPENDS_meta-cygnus += "fsl-arm"
+LAYERVERSION_meta-cygnus = "1"
+
+
+
+

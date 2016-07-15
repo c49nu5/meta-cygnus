@@ -1,0 +1,7 @@
+MX6SXSABRESD_CYG BOARD
+M:	David George <david@cygnus-instruments.com>
+S:	Maintained
+F:	board/freescale/mx6sxsabresd_cyg/
+F:	include/configs/mx6sxsabresd_cyg.h
+F:	configs/mx6sxsabresd_cyg_defconfig
+

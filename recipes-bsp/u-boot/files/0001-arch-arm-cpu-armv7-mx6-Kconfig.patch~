@@ -1,0 +1,24 @@
+--- ../git/arch/arm/cpu/armv7/mx6/Kconfig	2016-07-12 17:09:40.256019000 +0100
++++ ../git/arch/arm/cpu/armv7/mx6/Kconfig	2016-07-13 09:32:50.977298495 +0100
+@@ -109,6 +109,13 @@
+ 	select DM
+ 	select DM_THERMAL
+ 
++config TARGET_MX6SXSABRESD_CYG
++	bool "mx6sxsabresd_cyg"
++	select MX6SX
++	select SUPPORT_SPL
++	select DM
++	select DM_THERMAL
++
+ config TARGET_MX6SXSABREAUTO
+         bool "mx6sxsabreauto"
+ 	select MX6SX
+@@ -199,6 +206,7 @@
+ source "board/freescale/mx6slevk/Kconfig"
+ source "board/freescale/mx6sxsabresd/Kconfig"
+ source "board/freescale/mx6sxsabreauto/Kconfig"
++source "board/freescale/mx6sxsabresd_cyg/Kconfig"
+ source "board/freescale/mx6ul_14x14_evk/Kconfig"
+ source "board/gateworks/gw_ventana/Kconfig"
+ source "board/kosagi/novena/Kconfig"
