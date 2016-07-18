@@ -19,7 +19,7 @@ SRC_URI += "file://Makefile;subdir=git/board/freescale/mx6sxsabresd_cyg"
 SRC_URI += "file://mx6sxsabresd_cyg.c;subdir=git/board/freescale/mx6sxsabresd_cyg"
 
 # Patch existing Kconfig
-#SRC_URI += "file://0001-arch-arm-cpu-armv7-mx6-Kconfig.patch"
+SRC_URI += "file://0001-arch-arm-cpu-armv7-mx6-Kconfig.patch;subdir=git/arch/arm/cpu/armv7/mx6/"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
