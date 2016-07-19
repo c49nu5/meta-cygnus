@@ -6,7 +6,7 @@
  * published by the Free Software Foundation.
  */
 
-#include "imx6sx-sdb-cygnus.dtsi"
+#include "imx6sx-sdb.dtsi"
 
 / {
 	model = "Freescale i.MX6 SoloX SDB RevB Board Cygnus";

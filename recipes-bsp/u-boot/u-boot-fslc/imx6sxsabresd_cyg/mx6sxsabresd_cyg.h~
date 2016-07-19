@@ -54,14 +54,15 @@
 	UPDATE_M4_ENV \
 	"script=boot.scr\0" \
 	"image=zImage\0" \
-	"console=ttymxc0\0" \
 	"fdt_high=0xffffffff\0" \
 	"initrd_high=0xffffffff\0" \
 	"fdt_file=imx6sx-sdb-cygnus.dtb\0" \
 	"fdt_addr=0x88000000\0" \
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \
-	"videomode=video=ctfb:x:800,y:480,depth:24,pclk:33500,le:89,ri:164,up:23,lo:10,hs:10,vs:10,sync:0,vmode:0\0" \
+	"console=ttymx0\0" \
+	"videomode=video=ctfb:x:800,y:480,depth:24,mode:0,pclk:29851,le:89,ri:164,up:23,lo:10,hs:10,vs:10,sync:0,vmode:0\0" \
+	"consoleblank=0\0" \
 	"mmcdev=2\0" \
 	"mmcpart=1\0" \
 	"mmcroot=/dev/mmcblk3p2 rootwait rw\0" \
@@ -240,6 +241,7 @@
 #endif
 #endif
 
+
 #define CONFIG_ENV_OFFSET		(8 * SZ_64K)
 #define CONFIG_ENV_SIZE			SZ_8K
 #define CONFIG_ENV_IS_IN_MMC
@@ -250,3 +252,4 @@
 #endif
 
 #endif				/* __CONFIG_H */
+
